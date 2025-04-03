@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="refresh" content="3;url=views/index.html">
+    <script>
+        setTimeout(() => {
+            window.location.href = "views";
+        }, 3000);
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        .zoom-in {
+            animation: zoomIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); }
+            to { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center h-screen">
+    <div class="text-center fade-in">
+        <!-- Animasi Spinner -->
+        <div class="relative zoom-in">
+            <svg class="animate-spin h-14 w-14 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 000 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"></path>
+            </svg>
+        </div>
+        
+        <!-- Teks Loading -->
+        <h2 class="text-white text-2xl font-semibold mt-4">Mohon tunggu...</h2>
+        <p class="text-gray-400 text-sm">Anda akan diarahkan ke halaman utama.</p>
+
+        <!-- Progress Bar -->
+        <div class="mt-4 w-56 mx-auto bg-gray-700 rounded-full overflow-hidden">
+            <div id="progressBar" class="h-2 bg-blue-500 w-0"></div>
+        </div>
+    </div>
+
+    <script>
+        // Animasi Progress Bar
+        let progress = 0;
+        const progressBar = document.getElementById("progressBar");
+        const interval = setInterval(() => {
+            progress += 1;
+            progressBar.style.width = progress + "%";
+            if (progress >= 100) clearInterval(interval);
+        }, 30);
+    </script>
+</body>
+</html>
