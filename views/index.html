@@ -4,62 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bluepedia | Digital Hosting</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
-<style>
-.footer {
-    :root {
-        --white-smoke: #f9f9f9;
-        --black: #222;
-    }
-    background-color: var(--black);
-    padding-top: 65px;
-    padding-bottom: 10px;
-}
-.footer-bottom-wrapper {
-    color: var(--white-smoke);
-    text-align: center;
-    margin-top: 55px;
-}
-.small.footer-small {
-    font-size: 12px;
-}
-</style>
-<body class="bg-gray-900 text-white">
-    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 transition-opacity"></div>
+<body>
+    <div id="overlay"></div>
     
     <!-- Sidebar -->
-    <div class="flex">
-        <aside id="sidebar" class="w-64 min-h-screen bg-blue-500/10 backdrop-blur-lg p-4 shadow-xl rounded-r-lg fixed left-0 top-0 transform -translate-x-full transition-transform md:translate-x-0 z-50 border border-blue-500/20">
-            <div class="flex flex-col items-center mb-6">
-                <img src="../assets/image/game1.jpg" alt="GTPS Store Logo" class="h-12 rounded-full shadow-md">
-                <h1 class="text-blue-200 text-lg font-bold mt-2 drop-shadow-md">GTPS Store</h1>
+    <div class="page-container">
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/image/game1.jpg" alt="GTPS Store Logo" class="logo-image">
+                <h1 class="logo-text">GTPS Store</h1>
             </div>
         
-            <ul class="mt-10 md:mt-0">
-                <li class="mb-3">
-                    <a href="#home" class="block p-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition text-blue-200 backdrop-blur-md border border-blue-500/50">
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <a href="#home" class="menu-link">
                         <i class="fas fa-home"></i> Home
                     </a>
                 </li>
-                <li class="mb-3">
-                    <a href="#product" class="block p-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition text-blue-200 backdrop-blur-md border border-blue-500/50">
+                <li class="menu-item">
+                    <a href="#product" class="menu-link">
                         <i class="fas fa-tags"></i> Dokumentasi
                     </a>
                 </li>
-                <li class="mb-3">
-                    <a href="#product" class="block p-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition text-blue-200 backdrop-blur-md border border-blue-500/50">
+                <li class="menu-item">
+                    <a href="#product" class="menu-link">
                         <i class="fas fa-tags"></i> Support
                     </a>
                 </li>
-                <li class="mb-3">
-                    <a href="#product" class="block p-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition text-blue-200 backdrop-blur-md border border-blue-500/50">
+                <li class="menu-item">
+                    <a href="#product" class="menu-link">
                         <i class="fas fa-tags"></i> Stok Akun Roblox
                     </a>
                 </li>
-                <li class="mb-3">
-                    <a href="#product" class="block p-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition text-blue-200 backdrop-blur-md border border-blue-500/50">
+                <li class="menu-item">
+                    <a href="#product" class="menu-link">
                         <i class="fas fa-tags"></i> Support
                     </a>
                 </li>
@@ -67,178 +49,178 @@
         </aside>
 
         <!-- Content -->
-        <main class="flex-1 p-6 relative md:pl-72">
-            <header class="bg-blue-500/10 p-4 flex justify-between items-center shadow-lg backdrop-blur-lg border border-blue-500/30 rounded-lg mb-6 transition-all">
-                <h1 class="text-2xl font-bold flex items-center gap-2 text-blue-200 drop-shadow-md">
-                    <i class="fas fa-store text-blue-400"></i> Bluepedia
+        <main class="main-content">
+            <header class="main-header">
+                <h1 class="site-title">
+                    <i class="fas fa-store icon-blue"></i> Bluepedia
                 </h1>
-                <button id="sidebar-toggle" class="text-2xl md:hidden text-blue-300 focus:outline-none">
+                <button id="sidebar-toggle" class="sidebar-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
-                <nav class="hidden md:flex">
-                    <ul class="flex gap-6">
-                        <li>< a href="#home" class="hover:text-blue-400 text-blue-200 transition"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="#product" class="hover:text-blue-400 text-blue-200 transition"><i class="fas fa-box"></i> Products</a></li>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#product" class="nav-link"><i class="fas fa-box"></i> Products</a></li>
                     </ul>
                 </nav>
             </header>
 
-            <div id="home" class="w-full h-48 relative rounded-xl overflow-hidden bg-transparent">
-                <div class="absolute top-0 left-0 w-full bg-blue-500/50 text-white py-2 shadow-md text-center z-10">
+            <div id="home" class="banner-container">
+                <div class="banner-announcement">
                     <marquee behavior="scroll" direction="left" scrollamount="7">
-                        <i class="fas fa-bolt text-yellow-300"></i> Join Server Discord Bluepedia agar bisa dapat Hostting Free!
-                        <i class="fas fa-bolt text-yellow-300"></i>
+                        <i class="fas fa-bolt icon-yellow"></i> Join Server Discord Bluepedia agar bisa dapat Hostting Free!
+                        <i class="fas fa-bolt icon-yellow"></i>
                     </marquee>
                 </div>
-                <video class="absolute inset-0 w-full h-full object-contain md:object-cover" autoplay loop muted>
+                <video class="banner-video" autoplay loop muted>
                     <source src="../assets/banner/banner.mp4" type="video/mp4">
                     Browser tidak mendukung video.
                 </video>
             </div>
             
-            <div id="product" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+            <div id="product" class="product-grid">
                 <!-- CARD PRODUK -->
-                <div class="relative p-4 rounded-xl shadow-lg transition border border-blue-500/30 overflow-hidden hover:shadow-xl duration-300">
-                    <div class="absolute inset-0 bg-blue-900/20 backdrop-blur-xl rounded-xl"></div>
-                    <div class="relative z-10">
-                        <img src="../assets/image/game4.jpg" alt="Product" class="w-full h-40 object-cover rounded-md">
-                        <span class="absolute top-3 left-3 bg-yellow-500 text-black px-3 py-1 text-sm font-bold rounded shadow-md">
+                <div class="product-card">
+                    <div class="card-backdrop"></div>
+                    <div class="card-content">
+                        <img src="../assets/image/game4.jpg" alt="Product" class="product-image">
+                        <span class="product-badge premium-badge">
                             <i class="fas fa-crown"></i> Premium
                         </span>
-                        <h2 class="mt-3 text-lg font-bold text-blue-200">Source Code Premium</h2>
-                        <div class="flex items-center text-yellow-400 text-sm mt-1">
+                        <h2 class="product-title">Source Code Premium</h2>
+                        <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <span class="ml-2 text-blue-300">(5.0)</span>
+                            <span class="rating-count">(5.0)</span>
                         </div>
             
-                        <div class="flex justify-between items-center mt-1">
-                            <div>
-                                <p class="text-blue-400 text-sm line-through">Rp 70.000</p>
-                                <p class="text-blue-300 font-bold"><i class="fas fa-tags"></i> Rp 50.000</p>
+                        <div class="product-price-container">
+                            <div class="price-info">
+                                <p class="original-price">Rp 70.000</p>
+                                <p class="sale-price"><i class="fas fa-tags"></i> Rp 50.000</p>
                             </div>
-                            <span class="bg-green-500/30 text-green-400 px-2 py-1 text-xs rounded flex items-center gap-1">
+                            <span class="stock-status in-stock">
                                 <i class="fas fa-check-circle"></i> Stok Tersedia
                             </span>
                         </div>
-                        <p class="text-blue-400 text-xs mt-2">Source code Growtopia game dengan fitur yang lebih lengkap dan menarik dari basic.</p>
+                        <p class="product-description">Source code Growtopia game dengan fitur yang lebih lengkap dan menarik dari basic.</p>
             
-                        <div class="mt-4 flex justify-between">
-                            <button onclick="openQris()" class="bg-blue-600/70 px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">
+                        <div class="product-actions">
+                            <button onclick="openQris()" class="buy-button">
                                 <i class="fas fa-shopping-cart"></i> Beli
                             </button>
-                            <a href="https://wa.me/6285956640569" target="_blank" class="bg-blue-700/50 px-4 py-2 rounded-lg hover:bg-blue-800 transition shadow-md">
+                            <a href="https://wa.me/6285956640569" target="_blank" class="view-button">
                                 <i class="fas fa-info-circle"></i> Lihat
                             </a>
                         </div>
-                        <p class="text-xs text-blue-300 text-center mt-2">
-                            <i class="fas fa-user"></i> Dijual oleh: <span class="font-bold">JzuvDev</span>
+                        <p class="seller-info">
+                            <i class="fas fa-user"></i> Dijual oleh: <span class="seller-name">JzuvDev</span>
                         </p>
                     </div>
                 </div>
-                <div class="relative p-4 rounded-xl shadow-lg transition border border-blue-500/30 overflow-hidden hover:shadow-xl duration-300">
-                    <div class="absolute inset-0 bg-blue-900/20 backdrop-blur-xl rounded-xl"></div>
-                    <div class="relative z-10">
-                        <img src="../assets/image/game1.jpg" alt="Product" class="w-full h-40 object-cover rounded-md">
-                        <span class="absolute top -3 left-3 bg-green-500 text-black px-3 py-1 text-sm font-bold rounded shadow-md">
+                <div class="product-card">
+                    <div class="card-backdrop"></div>
+                    <div class="card-content">
+                        <img src="../assets/image/game1.jpg" alt="Product" class="product-image">
+                        <span class="product-badge basic-badge">
                             <i class="fas fa-leaf"></i> Basic
                         </span>
                     
-                        <h2 class="mt-3 text-lg font-bold text-blue-200">Source Code Basic</h2>
-                        <div class="flex items-center text-yellow-400 text-sm mt-1">
+                        <h2 class="product-title">Source Code Basic</h2>
+                        <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="far fa-star text-gray-500"></i>
-                            <span class="ml-2 text-blue-300">(4.0)</span>
+                            <i class="far fa-star empty-star"></i>
+                            <span class="rating-count">(4.0)</span>
                         </div>
-                        <div class="flex justify-between items-center mt-1">
-                            <div>
-                                <p class="text-blue-400 text-sm line-through">Rp 125.000</p>
-                                <p class="text-blue-300 font-bold"><i class="fas fa-tags"></i> Rp 100.000</p>
+                        <div class="product-price-container">
+                            <div class="price-info">
+                                <p class="original-price">Rp 125.000</p>
+                                <p class="sale-price"><i class="fas fa-tags"></i> Rp 100.000</p>
                             </div>
-                            <span class="bg-red-500/30 text-red-400 px-2 py-1 text-xs rounded flex items-center gap-1">
+                            <span class="stock-status out-of-stock">
                                 <i class="fas fa-times-circle"></i> Stok Habis
                             </span>
                         </div>
-                        <p class="text-blue-400 text-xs mt-2">Source code Growtopia game dengan fitur yang lengkap dan banyak fitur menarik.</p>
+                        <p class="product-description">Source code Growtopia game dengan fitur yang lengkap dan banyak fitur menarik.</p>
                         
-                        <div class="mt-4 flex justify-between">
-                            <button onclick="openQris()" class="bg-blue-600/70 px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">
+                        <div class="product-actions">
+                            <button onclick="openQris()" class="buy-button">
                                 <i class="fas fa-shopping-cart"></i> Beli
                             </button>
-                            <a href="https://wa.me/6285956640569" target="_blank" class="bg-blue-700/50 px-4 py-2 rounded-lg hover:bg-blue-800 transition shadow-md">
+                            <a href="https://wa.me/6285956640569" target="_blank" class="view-button">
                                 <i class="fas fa-info-circle"></i> Lihat
                             </a>
                         </div>
-                        <p class="text-xs text-blue-300 text-center mt-2">
-                            <i class="fas fa-user"></i> Dijual oleh: <span class="font-bold">JzuvDev</span>
+                        <p class="seller-info">
+                            <i class="fas fa-user"></i> Dijual oleh: <span class="seller-name">JzuvDev</span>
                         </p>
                     </div>
                 </div>
-                <div class="relative p-4 rounded-xl shadow-lg transition border border-blue-500/30 overflow-hidden hover:shadow-xl duration-300">
-                    <div class="absolute inset-0 bg-blue-900/20 backdrop-blur-xl rounded-xl"></div>
-                    <div class="relative z-10">
-                        <img src="../assets/image/game3.jpg" alt="Product" class="w-full h-40 object-cover rounded-md">
-                        <span class="absolute top-3 left-3 bg-blue-500 text-black px-3 py-1 text-sm font-bold rounded shadow-md">
+                <div class="product-card">
+                    <div class="card-backdrop"></div>
+                    <div class="card-content">
+                        <img src="../assets/image/game3.jpg" alt="Product" class="product-image">
+                        <span class="product-badge protection-badge">
                             <i class="fas fa-shield-alt"></i> Protection
                         </span>
-                        <h2 class="mt-3 text-lg font-bold text-blue-200">Anti DDoS</h2>
-                        <div class="flex items-center text-yellow-400 text-sm mt-1">
+                        <h2 class="product-title">Anti DDoS</h2>
+                        <div class="product-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="far fa-star text-gray-500"></i>
-                            <span class="ml-2 text-blue-300">(4.5)</span>
+                            <i class="far fa-star empty-star"></i>
+                            <span class="rating-count">(4.5)</span>
                         </div>
-                        <div class="flex justify-between items-center mt-1">
-                            <div>
-                                <p class="text-blue-400 text-sm line-through">Rp 200.000</p>
-                                <p class="text-blue-300 font-bold"><i class="fas fa-tags"></i> Rp 150.000</p>
+                        <div class="product-price-container">
+                            <div class="price-info">
+                                <p class="original-price">Rp 200.000</p>
+                                <p class="sale-price"><i class="fas fa-tags"></i> Rp 150.000</p>
                             </div>
-                            <span class="bg-green-500/30 text-green-400 px-2 py-1 text-xs rounded flex items-center gap-1">
+                            <span class="stock-status in-stock">
                                 <i class="fas fa-check-circle"></i> Stok Tersedia
                             </span>
                         </div>
-                        <p class="text-blue-400 text-xs mt-2">Source code sistem Anti DDoS yang kuat dan efisien untuk melindungi server Anda.</p>
-                        <div class="mt-4 flex justify-between">
-                            <button onclick="openQris()" class="bg-blue-600/70 px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">
+                        <p class="product-description">Source code sistem Anti DDoS yang kuat dan efisien untuk melindungi server Anda.</p>
+                        <div class="product-actions">
+                            <button onclick="openQris()" class="buy-button">
                                 <i class="fas fa-shopping-cart"></i> Beli
                             </button>
-                            < a href="https://wa.me/6285956640569" target="_blank" class="bg-blue-700/50 px-4 py-2 rounded-lg hover:bg-blue-800 transition shadow-md">
+                            <a href="https://wa.me/6285956640569" target="_blank" class="view-button">
                                 <i class="fas fa-info-circle"></i> Lihat
                             </a>
                         </div>
-                        <p class="text-xs text-blue-300 text-center mt-2">
-                            <i class="fas fa-user"></i> Dijual oleh: <span class="font-bold">JzuvDev</span>
+                        <p class="seller-info">
+                            <i class="fas fa-user"></i> Dijual oleh: <span class="seller-name">JzuvDev</span>
                         </p>
                     </div>
                 </div>
             </div>
         </main>
-        <div id="qrisOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden transition-opacity duration-300 z-50"></div>
-        <div id="qrisModal" class="fixed inset-0 flex justify-center items-center hidden z-50 opacity-0 translate-y-10 transition-all duration-300">
-            <div class="bg-blue-500/20 backdrop-blur-2xl border border-blue-500/30 p-6 rounded-xl shadow-lg w-96 relative">
-                <button onclick="closeQris()" class="absolute top-3 right-3 text-white hover:text-gray-200 text-xl">&times;</button>
-                <h2 class="text-lg font-bold text-center text-white drop-shadow-md">Scan QRIS untuk Membayar</h2>
-                <img src="../assets/image/qris.jpg" alt="QRIS" class="w-full rounded-lg mt-4 shadow-md">
-                <p id="qrisTimer" class="text-center text-sm text-white mt-2">Sisa waktu: <span class="font-bold">60</span> detik</p>
-                <div class="mt-6 flex flex-col gap-3">
-                    <button onclick="downloadQris()" class="bg-blue-500/20 text-white px-5 py-3 rounded-xl hover:bg-blue-500/40 transition-all shadow-md backdrop-blur-xl border border-blue-500/30">
+        <div id="qrisOverlay"></div>
+        <div id="qrisModal">
+            <div class="qris-container">
+                <button onclick="closeQris()" class="close-button">&times;</button>
+                <h2 class="qris-title">Scan QRIS untuk Membayar</h2>
+                <img src="../assets/image/qris.jpg" alt="QRIS" class="qris-image">
+                <p id="qrisTimer" class="qris-timer">Sisa waktu: <span class="timer-count">60</span> detik</p>
+                <div class="qris-actions">
+                    <button onclick="downloadQris()" class="qris-download-button">
                         <i class="fas fa-download"></i> Download QRIS
                     </button>
                     <a href="https://wa.me/6285956640569?text=Saya%20sudah%20melakukan%20pembayaran%20melalui%20QRIS." 
                     target="_blank"
                     onclick="showSuccess()"
-                    class="bg-green-500/20 text-white px-5 py-3 rounded-xl hover:bg-green-500/40 transition-all shadow-md backdrop-blur-xl border border-green-500/30 flex items-center justify-center gap-2">
+                    class="qris-success-button">
                         <i class="fas fa-check-circle"></i> Sudah Bayar
                     </a>
-                    <button onclick="closeQris()" class="bg-gray-500/20 text-white px-5 py-3 rounded-xl hover:bg-gray-500/40 transition-all shadow-md backdrop-blur-xl border border-gray-500/30">
+                    <button onclick="closeQris()" class="qris-cancel-button">
                         <i class="fas fa-times-circle"></i> Batal
                     </button>
                 </div>
@@ -246,13 +228,13 @@
         </div>
 
         <!-- Notifikasi Berhasil Bayar -->
-        <div id="qrisSuccess" class="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-3 rounded-lg shadow-lg hidden z-50">
+        <div id="qrisSuccess" class="success-notification">
             <i class="fas fa-check-circle"></i> Pembayaran Berhasil! Silakan konfirmasi ke WhatsApp.
         </div>
         
-        <div class="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:bg-blue-600 transition z-[9999]">
+        <div class="linktree-button">
             <i class="fab fa-tree"></i>
-            <a href="https:/linktr.ee/yann1945" target="_blank" class="font-bold">Linktree</a>
+            <a href="https:/linktr.ee/yann1945" target="_blank" class="linktree-text">Linktree</a>
         </div>
     </div>
     <div class="footer">
