@@ -1,19 +1,59 @@
 let qrisTimeout;
+let sidebarOpen = false;
+
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    
+    sidebarOpen = !sidebarOpen;
+    
+    if (sidebarOpen) {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+    } else {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+    }
+}
+
+function closeSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    
+    sidebarOpen = false;
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sidebarToggle = document.getElementById("sidebar-toggle");
+    const overlay = document.getElementById("overlay");
+    
+    sidebarToggle.addEventListener("click", toggleSidebar);
+    overlay.addEventListener("click", closeSidebar);
+    
+    // Untuk layar besar, tampilkan sidebar secara default
+    if (window.innerWidth >= 768) {
+        document.getElementById("sidebar").classList.add("active");
+    }
+});
 
 function openQris() {
-    document.getElementById("qrisModal").classList.remove("hidden");
-    document.getElementById("qrisOverlay").classList.remove("hidden");
+    document.getElementById("qrisModal").style.display = "flex";
+    document.getElementById("qrisOverlay").style.display = "block";
+    
     setTimeout(() => {
-        document.getElementById("qrisModal").classList.add("opacity-100", "translate-y-0");
-        document.getElementById("qrisOverlay").classList.add("opacity-100");
+        document.getElementById("qrisModal").style.opacity = "1";
+        document.getElementById("qrisModal").style.transform = "translateY(0)";
+        document.getElementById("qrisOverlay").style.opacity = "1";
     }, 10);
 
     // Timer 60 detik
-    let timeLeft = 60;
-    document.getElementById("qrisTimer").innerHTML = `Sisa waktu: <span class="font-bold">${timeLeft}</span> detik`;
+    let timeLeft = 10;
+    document.getElementById("qrisTimer").innerHTML = Sisa waktu: <span class="timer-count">${timeLeft}</span> detik;
     qrisTimeout = setInterval(() => {
         timeLeft--;
-        document.getElementById("qrisTimer").innerHTML = `Sisa waktu: <span class="font-bold">${timeLeft}</span> detik`;
+        document.getElementById("qrisTimer").innerHTML = Sisa waktu: <span class="timer-count">${timeLeft}</span> detik;
         if (timeLeft <= 0) {
             closeQris();
         }
@@ -22,17 +62,19 @@ function openQris() {
 
 function closeQris() {
     clearInterval(qrisTimeout);
-    document.getElementById("qrisModal").classList.remove("opacity-100", "translate-y-0");
-    document.getElementById("qrisOverlay").classList.remove("opacity-100");
+    document.getElementById("qrisModal").style.opacity = "0";
+    document.getElementById("qrisModal").style.transform = "translateY(2.5rem)";
+    document.getElementById("qrisOverlay").style.opacity = "0";
+    
     setTimeout(() => {
-        document.getElementById("qrisModal").classList.add("hidden");
-        document.getElementById("qrisOverlay").classList.add("hidden");
+        document.getElementById("qrisModal").style.display = "none";
+        document.getElementById("qrisOverlay").style.display = "none";
     }, 300);
 }
 
 function downloadQris() {
     const link = document.createElement("a");
-    link.href = "../assets/image/qris.jpg";
+    link.href = "https://blue-store-taupe.vercel.app/assets/image/qris.jpg";
     link.download = "QRIS_Pembayaran.jpg";
     document.body.appendChild(link);
     link.click();
@@ -40,28 +82,19 @@ function downloadQris() {
 }
 
 function showSuccess() {
-    document.getElementById("qrisSuccess").classList.remove("hidden");
+    document.getElementById("qrisSuccess").style.display = "block";
     setTimeout(() => {
-        document.getElementById("qrisSuccess").classList.add("hidden");
+        document.getElementById("qrisSuccess").style.display = "none";
     }, 3000);
+    closeQris();
 }
 
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
-const toggleBtn = document.getElementById("sidebar-toggle");
-
-// Fungsi buka sidebar
-function openSidebar() {
-    sidebar.classList.remove("-translate-x-full");
-    overlay.classList.remove("hidden");
-}
-
-// Fungsi tutup sidebar
-function closeSidebar() {
-    sidebar.classList.add("-translate-x-full");
-    overlay.classList.add("hidden");
-}
-
-// Event listener
-toggleBtn.addEventListener("click", openSidebar);
-overlay.addEventListener("click", closeSidebar);
+// Menutup sidebar saat layar di-resize ke ukuran besar
+window.addEventListener("resize", function() {
+    if (window.innerWidth >= 768) {
+        document.getElementById("sidebar").classList.add("active");
+        document.getElementById("overlay").classList.remove("active");
+    } else if (!sidebarOpen) {
+        document.getElementById("sidebar").classList.remove("active");
+    }
+});
